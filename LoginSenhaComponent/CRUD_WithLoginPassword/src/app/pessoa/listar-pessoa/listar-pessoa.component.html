@@ -30,7 +30,13 @@
         >
           <i class="fa fa_edit" aria-hidden="true"></i>Editar
         </a>
-        <a href="#" title="Remover" alt="Remover" class="btn btn-xs btn-danger">
+        <a
+          href="#"
+          (click)="remover($event, pessoa)"
+          title="Remover"
+          alt="Remover"
+          class="btn btn-xs btn-danger"
+        >
           <i class="fa fa_times" aria-hidden="true"></i>Remover
         </a>
       </td>
