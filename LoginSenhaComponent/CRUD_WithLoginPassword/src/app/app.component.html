@@ -1,9 +1,10 @@
 <div class="conteiner-fluid">
   <nav class="navbar navbar-default">
     <div class="conteiner-fluid">
-      <div class="navbar-header">
-        <a href="#" class="navbar-brand"> {{ title }} </a>
-        aaa
+      <div *ngFor="let title of titles" class="navbar-header">
+        <a routerLink="{{ title.router_link }}" class="navbar-brand">
+          {{ title.title }}
+        </a>
       </div>
     </div>
   </nav>
