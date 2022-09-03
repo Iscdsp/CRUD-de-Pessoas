@@ -6,9 +6,16 @@ import { AppComponent } from './app.component';
 
 import { PessoaModule } from './pessoa/pessoa.module';
 import { EnderecoModule } from './endereco/endereco.module';
+import { CidadeModule } from './cidade/cidade.module';
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, PessoaModule, EnderecoModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    PessoaModule,
+    EnderecoModule,
+    CidadeModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

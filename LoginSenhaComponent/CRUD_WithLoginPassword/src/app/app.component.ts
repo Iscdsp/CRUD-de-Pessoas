@@ -13,8 +13,9 @@ export class AppComponent {
       router_link: '/pessoas',
     },
     {
-      title: 'Endereço',
+      title: 'Endereços',
       router_link: '/enderecos',
     },
+    { title: 'Cidades', router_link: '/cidades' },
   ];
 }
