@@ -20,5 +20,11 @@ export class ListarEnderecoComponent implements OnInit {
     return this.enderecoService.listarTodosEnderecos();
   }
 
-  remover($event: any, endereco: Endereco) {}
+  remover($event: any, endereco: Endereco): void {
+    $event.preventDefault();
+    if (confirm(`Deseja realmente removero endereço ${endereco.rua}?`)) {
+      this.enderecoService.remover(endereco.id!);
+      this.enderecos = this.listarTodosEnderecos();
+    }
+  }
 }

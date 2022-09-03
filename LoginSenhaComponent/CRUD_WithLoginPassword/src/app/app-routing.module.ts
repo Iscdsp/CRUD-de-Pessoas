@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EditarEnderecoComponent } from './endereco/editar-endereco/editar-endereco.component';
 import { InserirEnderecoComponent } from './endereco/inserir-endereco/inserir-endereco.component';
 import { ListarEnderecoComponent } from './endereco/listar-endereco/listar-endereco.component';
 import { EditarPessoaComponent } from './pessoa/editar-pessoa/editar-pessoa.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'enderecos', redirectTo: 'enderecos/listar' },
   { path: 'enderecos/listar', component: ListarEnderecoComponent },
   { path: 'enderecos/novo', component: InserirEnderecoComponent },
+  { path: 'enderecos/editar/:id', component: EditarEnderecoComponent },
 ];
 
 @NgModule({
