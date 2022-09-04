@@ -17,5 +17,6 @@ export class AppComponent {
       router_link: '/enderecos',
     },
     { title: 'Cidades', router_link: '/cidades' },
+    { title: 'Estados', router_link: '/estados' },
   ];
 }
