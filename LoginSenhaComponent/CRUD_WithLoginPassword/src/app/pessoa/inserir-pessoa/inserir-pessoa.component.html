@@ -45,6 +45,29 @@
       </div>
     </div>
     <div class="form-group">
+      <label for="idade">Data de Nascimento</label>
+      <input
+        [(ngModel)]="pessoa.data_nascimento"
+        #data_nascimento="ngModel"
+        type="date"
+        name="data_nascimento"
+        id="data_nascimento"
+        class="form-control"
+        required
+      />
+      <div
+        *ngIf="
+          data_nascimento.errors &&
+          (data_nascimento.dirty || data_nascimento.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div [hidden]="!data_nascimento.errors?.['required']">
+          Digite a data de nascimento da Pessoa
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
       <button
         (click)="inserir()"
         [disabled]="!formPessoa.form.valid"
