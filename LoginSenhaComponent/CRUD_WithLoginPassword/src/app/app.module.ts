@@ -8,6 +8,7 @@ import { PessoaModule } from './pessoa/pessoa.module';
 import { EnderecoModule } from './endereco/endereco.module';
 import { CidadeModule } from './cidade/cidade.module';
 import { EstadoModule } from './estado/estado.module';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
