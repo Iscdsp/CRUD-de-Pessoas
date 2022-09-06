@@ -6,14 +6,23 @@ import { InserirEstadoComponent } from './inserir-estado/inserir-estado.componen
 import { EstadoService } from './service/estado.service';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
+import { SharedModule } from '../shared';
+import { ModalEstadoComponent } from './modal-estado/modal-estado.component';
+import { NgxMaskModule } from 'ngx-mask';
 @NgModule({
   declarations: [
     ListarEstadoComponent,
     EditarEstadoComponent,
     InserirEstadoComponent,
+    ModalEstadoComponent,
   ],
-  imports: [CommonModule, RouterModule, FormsModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    FormsModule,
+    SharedModule,
+    NgxMaskModule.forRoot(),
+  ],
   providers: [EstadoService],
 })
 export class EstadoModule {}

@@ -32,6 +32,7 @@
         type="number"
         name="numero"
         id="numero"
+        numerico
         class="form-control"
         required
       />
@@ -53,7 +54,6 @@
         name="complemento"
         id="complemento"
         class="form-control"
-        required
       />
       <div
         *ngIf="complemento.errors && (complemento.dirty || complemento.touched)"
@@ -90,6 +90,7 @@
         type="text"
         name="cep"
         id="cep"
+        mask="0000-000"
         class="form-control"
         required
       />

@@ -19,8 +19,15 @@
     </tr>
     <tr *ngFor="let cidade of cidades">
       <td>{{ cidade.nome }}</td>
-      <td>{{ cidade.estado }}</td>
+      <td>{{ cidade.estado | caixaAlta }}</td>
       <td class="text-center" style="width: 300px">
+        <button
+          type="button"
+          class="btn btn-xs btn-info"
+          (click)="abrirModalCidades(cidade)"
+        >
+          <i class="fa fa-eye" aria-hidden="true"></i>Ver
+        </button>
         <a
           href="#"
           [routerLink]="['/cidades/editar', cidade.id]"

@@ -23,6 +23,14 @@
       <td>{{ pessoa.idade }}</td>
       <td>{{ pessoa.data_nascimento! | mask: "d0/M0/0000" }}</td>
       <td class="text-center" style="width: 300px">
+        <button
+          type="button"
+          class="btn btn-xs btn-info"
+          (click)="abrirModalPessoa(pessoa)"
+        >
+          <i class="fa fa-eye" aria-hidden="true"></i>Ver
+        </button>
+
         <a
           href="#"
           [routerLink]="['/pessoas/editar', pessoa.id]"

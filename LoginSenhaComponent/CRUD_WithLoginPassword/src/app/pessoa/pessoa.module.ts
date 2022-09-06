@@ -11,12 +11,14 @@ import { EditarPessoaComponent } from './editar-pessoa/editar-pessoa.component';
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { SharedModule } from '../shared';
+import { ModalPessoaComponent } from './modal-pessoa/modal-pessoa.component';
 
 @NgModule({
   declarations: [
     ListarPessoaComponent,
     InserirPessoaComponent,
     EditarPessoaComponent,
+    ModalPessoaComponent,
   ],
   imports: [
     SharedModule,

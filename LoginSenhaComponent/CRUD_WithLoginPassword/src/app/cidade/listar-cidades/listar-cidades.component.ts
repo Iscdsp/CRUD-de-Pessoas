@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Cidade } from 'src/app/shared/models/cidade.model';
+import { ModalCidadesComponent } from '../modal-cidades/modal-cidades.component';
 import { CidadeService } from '../service/cidade.service';
 
 @Component({
@@ -10,7 +12,10 @@ import { CidadeService } from '../service/cidade.service';
 export class ListarCidadesComponent implements OnInit {
   cidades: Cidade[] = [];
 
-  constructor(private cidadeService: CidadeService) {}
+  constructor(
+    private cidadeService: CidadeService,
+    private modalService: NgbModal
+  ) {}
 
   ngOnInit(): void {
     this.cidades = this.listarTodas();
@@ -24,5 +29,10 @@ export class ListarCidadesComponent implements OnInit {
       this.cidadeService.remover(cidade.id!);
       this.cidades = this.listarTodas();
     }
+  }
+
+  abrirModalCidades(cidade: Cidade): void {
+    const modalRef = this.modalService.open(ModalCidadesComponent);
+    modalRef.componentInstance.cidade = cidade;
   }
 }

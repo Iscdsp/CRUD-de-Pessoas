@@ -6,14 +6,24 @@ import { EditarCidadesComponent } from './editar-cidades/editar-cidades.componen
 import { CidadeService } from './service/cidade.service';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ModalCidadesComponent } from './modal-cidades/modal-cidades.component';
+import { NgxMaskModule } from 'ngx-mask';
+import { SharedModule } from '../shared';
 
 @NgModule({
   declarations: [
     ListarCidadesComponent,
     InserirCidadesComponent,
     EditarCidadesComponent,
+    ModalCidadesComponent,
   ],
-  imports: [CommonModule, RouterModule, FormsModule],
+  imports: [
+    SharedModule,
+    CommonModule,
+    RouterModule,
+    FormsModule,
+    NgxMaskModule.forRoot(),
+  ],
   providers: [CidadeService],
 })
 export class CidadeModule {}
