@@ -102,21 +102,13 @@
     </div>
     <div class="form-group">
       <label for="idade">Cidade:</label>
-      <input
-        [(ngModel)]="endereco.cidade"
-        #cidade="ngModel"
-        type="text"
+      <ng-select
         name="cidade"
-        id="cidade"
-        class="form-control"
-        required
-      />
-      <div
-        *ngIf="cidade.errors && (cidade.dirty || cidade.touched)"
-        class="alert alert-danger"
-      >
-        <div [hidden]="!cidade.errors?.['required']">Digite o bairro!</div>
-      </div>
+        [items]="cidades"
+        bindLabel="nome"
+        placeholder="Selecione uma Cidade"
+        [(ngModel)]="endereco.cidade"
+      ></ng-select>
     </div>
     <div class="form-group">
       <label for="idade">Estado:</label>
@@ -136,6 +128,48 @@
         <div [hidden]="!estado.errors?.['required']">Digite o bairro!</div>
       </div>
     </div>
+    <div class="form-group">
+      <label for="residencial">Residencial:</label>&nbsp;
+      <input
+        type="checkbox"
+        name="residencial"
+        id="residencial"
+        class="form-check-input"
+        [(ngModel)]="endereco.residencial"
+        #residencial="ngModel"
+      />
+    </div>
+    <div class="form-group">
+      <label for="tipo">Tipo</label><br />
+      <input
+        type="radio"
+        name="tipo"
+        id="tipo1"
+        [(ngModel)]="endereco.tipo"
+        #tipo1="ngModel"
+        class="form-check-input"
+        value="Avenida"
+      />Avenida<br />
+      <input
+        type="radio"
+        name="tipo"
+        id="tipo2"
+        [(ngModel)]="endereco.tipo"
+        #tipo2="ngModel"
+        class="form-check-input"
+        value="Rua"
+      />Rua<br />
+      <input
+        type="radio"
+        name="tipo"
+        id="tipo3"
+        [(ngModel)]="endereco.tipo"
+        #tipo3="ngModel"
+        class="form-check-input"
+        value="Travessa"
+      />travessa<br />
+    </div>
+
     <div class="form-group">
       <button (click)="atualizar()" type="button" class="btn btn-primary">
         <i class="fa fa-save" aria-hidden="true"></i>Atualizar

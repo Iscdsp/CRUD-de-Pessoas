@@ -10,6 +10,7 @@ import { EditarEnderecoComponent } from './editar-endereco/editar-endereco.compo
 import { SharedModule } from '../shared';
 import { NgxMaskModule } from 'ngx-mask';
 import { ModalEnderecoComponent } from './modal-endereco/modal-endereco.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ModalEnderecoComponent } from './modal-endereco/modal-endereco.componen
     ModalEnderecoComponent,
   ],
   imports: [
+    NgSelectModule,
     NgxMaskModule.forRoot(),
     SharedModule,
     CommonModule,

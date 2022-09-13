@@ -1,0 +1,12 @@
+.ajust-nav{
+   display: flex;
+   gap: 20px;
+}
+
+.ajust-wrapped{
+    height: 80px;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 40px;    
+}

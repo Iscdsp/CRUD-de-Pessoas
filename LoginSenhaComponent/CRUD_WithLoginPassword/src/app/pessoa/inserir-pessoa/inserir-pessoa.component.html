@@ -74,6 +74,58 @@
         </div>
       </div>
     </div>
+
+    <div class="form-group">
+      <label for="motorista">Cart. Motorista</label><br />
+      <input
+        type="radio"
+        name="motorista"
+        id="motorista1"
+        class="form-check-input"
+        [(ngModel)]="pessoa.motorista"
+        #motorista1="ngModel"
+        value="Não"
+      />Não<br />
+      <input
+        type="radio"
+        name="motorista"
+        id="motorista2"
+        class="form-check-input"
+        [(ngModel)]="pessoa.motorista"
+        #motorista2="ngModel"
+        value="A"
+      />A<br />
+      <input
+        type="radio"
+        name="motorista"
+        id="motorista3"
+        class="form-check-input"
+        [(ngModel)]="pessoa.motorista"
+        #motorista3="ngModel"
+        value="B"
+      />B<br />
+      <input
+        type="radio"
+        name="motorista"
+        id="motorista4"
+        class="form-check-input"
+        [(ngModel)]="pessoa.motorista"
+        #motorista4="ngModel"
+        value="AB"
+      />AB<br />
+    </div>
+    <div class="form-group">
+      <label for="fumante">Fumante</label>&nbsp;
+      <input
+        type="checkbox"
+        name="fumante"
+        id="fumante"
+        class="form-check-input"
+        value="Sim"
+        [(ngModel)]="pessoa.fumante"
+        #fumante="ngModel"
+      />
+    </div>
     <div class="form-group">
       <button
         (click)="inserir()"

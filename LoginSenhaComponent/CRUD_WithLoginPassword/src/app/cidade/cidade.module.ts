@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { ModalCidadesComponent } from './modal-cidades/modal-cidades.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { SharedModule } from '../shared';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SharedModule } from '../shared';
     ModalCidadesComponent,
   ],
   imports: [
+    NgSelectModule,
     SharedModule,
     CommonModule,
     RouterModule,

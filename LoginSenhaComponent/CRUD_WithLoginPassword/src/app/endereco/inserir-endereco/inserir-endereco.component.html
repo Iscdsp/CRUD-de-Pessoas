@@ -103,21 +103,13 @@
     </div>
     <div class="form-group">
       <label for="idade">Cidade:</label>
-      <input
+      <ng-select
+        name="cidades"
+        [items]="cidades"
         [(ngModel)]="endereco.cidade"
-        #cidade="ngModel"
-        type="text"
-        name="cidade"
-        id="cidade"
-        class="form-control"
-        required
-      />
-      <div
-        *ngIf="cidade.errors && (cidade.dirty || cidade.touched)"
-        class="alert alert-danger"
-      >
-        <div [hidden]="!cidade.errors?.['required']">Digite o bairro!</div>
-      </div>
+        bindLabel="nome"
+        placeholder="Selecione uma Cidade"
+      ></ng-select>
     </div>
     <div class="form-group">
       <label for="idade">Estado:</label>
@@ -138,6 +130,47 @@
       </div>
     </div>
     <div class="form-group">
+      <label for="residencial">Residencial:</label>&nbsp;
+      <input
+        type="checkbox"
+        name="residencial"
+        id="residencial"
+        class="form-check-input"
+        [(ngModel)]="endereco.residencial"
+        #residencial="ngModel"
+      />
+    </div>
+    <div class="form-group">
+      <label for="tipo">Tipo</label><br />
+      <input
+        type="radio"
+        name="tipo"
+        id="tipo1"
+        [(ngModel)]="endereco.tipo"
+        #tipo1="ngModel"
+        class="form-check-input"
+        value="Avenida"
+      />Avenida<br />
+      <input
+        type="radio"
+        name="tipo"
+        id="tipo2"
+        [(ngModel)]="endereco.tipo"
+        #tipo2="ngModel"
+        class="form-check-input"
+        value="Rua"
+      />Rua<br />
+      <input
+        type="radio"
+        name="tipo"
+        id="tipo3"
+        [(ngModel)]="endereco.tipo"
+        #tipo3="ngModel"
+        class="form-check-input"
+        value="Travessa"
+      />travessa<br />
+    </div>
+    <div class="form-group">
       <button
         (click)="inserirEndereco()"
         [disabled]="!formEndereco.form.valid"
@@ -146,7 +179,7 @@
       >
         <i class="fa fa-save" aria-hidden="true"></i>Salvar
       </button>
-      <a href="" [routerLink]="['/pessoas']" class="btn btn-secondary">
+      <a href="" [routerLink]="['/enderecos']" class="btn btn-secondary">
         <i class="fa fa-save" aria-hidden="true"></i>Voltar
       </a>
     </div>

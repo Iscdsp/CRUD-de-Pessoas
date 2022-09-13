@@ -10,6 +10,8 @@
       <th>CEP</th>
       <th>Cidade</th>
       <th>Estado</th>
+      <th>Residencial</th>
+      <th>Tipo</th>
       <th class="text-center">
         <a
           href="#"
@@ -28,8 +30,10 @@
       <td>{{ endereco.complemento }}</td>
       <td>{{ endereco.bairro }}</td>
       <td>{{ endereco.cep! | mask: "0000-000" }}</td>
-      <td>{{ endereco.cidade }}</td>
+      <td>{{ endereco.cidade?.nome }}</td>
       <td>{{ endereco.estado }}</td>
+      <td>{{ endereco.residencial! ? "Residencial" : "Comercial" }}</td>
+      <td>{{ endereco.tipo! ? endereco.tipo : "Não informado" }}</td>
 
       <td class="text-center" style="width: 300px">
         <button

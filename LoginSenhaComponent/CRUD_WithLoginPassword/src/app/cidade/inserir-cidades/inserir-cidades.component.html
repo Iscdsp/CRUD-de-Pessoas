@@ -25,25 +25,14 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="idade">Estado:</label>
-      <input
-        [(ngModel)]="cidade.estado"
-        #estado="ngModel"
-        type="text"
+      <label for="estado">Estado:</label>
+      <ng-select
         name="estado"
-        id="estado"
-        class="form-control"
-        maxlength="2"
-        required
-      />
-      <div
-        *ngIf="estado.errors && (estado.dirty || estado.touched)"
-        class="alert alert-danger"
-      >
-        <div [hidden]="!estado.errors?.['required']">
-          Digite o Estado da cidade!
-        </div>
-      </div>
+        [items]="estados"
+        bindLabel="sigla"
+        [(ngModel)]="cidade.estado"
+        placeholder="Selecione um estado"
+      ></ng-select>
     </div>
     <div class="form-group">
       <button
@@ -54,7 +43,7 @@
       >
         <i class="fa fa-save" aria-hidden="true"></i>Salvar
       </button>
-      <a href="" [routerLink]="['/pessoas']" class="btn btn-secondary">
+      <a href="" [routerLink]="['/cidades']" class="btn btn-secondary">
         <i class="fa fa-save" aria-hidden="true"></i>Voltar
       </a>
     </div>

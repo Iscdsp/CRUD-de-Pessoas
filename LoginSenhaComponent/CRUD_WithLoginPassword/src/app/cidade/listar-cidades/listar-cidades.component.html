@@ -19,7 +19,7 @@
     </tr>
     <tr *ngFor="let cidade of cidades">
       <td>{{ cidade.nome }}</td>
-      <td>{{ cidade.estado | caixaAlta }}</td>
+      <td>{{ cidade?.estado?.sigla | caixaAlta }}</td>
       <td class="text-center" style="width: 300px">
         <button
           type="button"

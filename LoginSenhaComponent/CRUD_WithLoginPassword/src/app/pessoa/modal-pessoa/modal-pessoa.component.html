@@ -16,6 +16,8 @@
     <p>
       Data de Nascimento : {{ pessoa.data_nascimento! | mask: "d0/M0/0000" }}
     </p>
+    <p>Motorista: {{ pessoa.motorista! ? pessoa.motorista : "Não" }}</p>
+    <p>{{ pessoa.fumante! ? "Sim" : "Não" }}</p>
   </div>
 </div>
 <div class="modal-footer">

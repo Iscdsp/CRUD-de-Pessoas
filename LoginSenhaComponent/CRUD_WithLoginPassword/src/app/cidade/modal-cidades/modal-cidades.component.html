@@ -14,7 +14,11 @@
     <p>
       Nome: <span style="text-transform: capitalize">{{ cidade.nome }}</span>
     </p>
-    <p>Estado: {{ cidade.estado | caixaAlta }}</p>
+    <p>
+      Estado: {{
+      <td>{{ cidade?.estado?.sigla | caixaAlta }}</td>
+      | caixaAlta }}
+    </p>
   </div>
 </div>
 <div class="modal-footer">
