@@ -1,0 +1,70 @@
+<h1>Login</h1>
+
+<!-- <div
+  *ngIf="message"
+  class="alert alert-danger alert-dismissible fade show"
+  role="alert"
+>
+  {{ message }}
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <button
+    type="button"
+    class="close"
+    data-dismiss="alert"
+    aria-label="Close"
+    (click)="$event.preventDefault()"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div> -->
+
+<div class="">
+  <form #formLog="ngForm">
+    <div class="form-group">
+      <label for="login">Usuário:</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="login.login"
+        #login1="ngModel"
+        name="login"
+        id="login1"
+        required
+      />
+      <div
+        *ngIf="login1.errors && (login1.dirty || login1.touched)"
+        class="alert alert-danger"
+      >
+        <div [hidden]="!login1.errors?.['required']">Digite o usuário!</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="senha">Senha</label>
+      <input
+        type="text"
+        name="senha"
+        id="senha1"
+        [(ngModel)]="login.senha"
+        #senha1="ngModel"
+        class="form-control"
+        required
+      />
+      <div
+        *ngIf="senha1.errors && (senha1.dirty || senha1.touched)"
+        class="alert alert-danger"
+      >
+        <div [hidden]="!senha1.errors?.['required']">Digite a senha!</div>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="logar()"
+      [disabled]="!formLog.form.valid"
+    >
+      <i class="fa fa-save" aria-hidden="true"></i>&nbsp;Logar
+    </button>
+  </form>
+</div>

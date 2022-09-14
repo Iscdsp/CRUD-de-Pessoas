@@ -1,22 +1,61 @@
 <div class="conteiner-fluid">
-  <nav class="navbar navbar-expand-md n navbar-dark bg-dark">
+  <div
+    class="navbar navbar-expand-md n navbar-dark bg-dark"
+    *ngIf="!usuarioLogado"
+  >
+    <div class="navbar-brand nav-link">Cadastro de Pessoas</div>
+  </div>
+  <nav
+    class="navbar navbar-expand-md n navbar-dark bg-dark"
+    *ngIf="usuarioLogado"
+  >
     <a href="#" class="navbar-brand nav-link" routerLink="/pessoas">
-      <i class="fa fa-user-edit"></i>
+      <i class="fa fa-user-edit"></i>{{ title }}
     </a>
 
-    <div class="navbar-collapse collapsed" id="navbarContent">
-      <ul class="navbar-nav ml-auto">
+    <div
+      class="navbar-collapse collapsed justify-content-between"
+      id="navbarContent"
+    >
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a href="#" class="nav-link" routerLink="/pessoas">Pessoas</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link" routerLink="/enderecos">Endereços</a>
+          <a
+            href="#"
+            class="nav-link"
+            *ngIf="
+              usuarioLogado.perfil === 'ADMIN' ||
+              usuarioLogado.perfil === 'GERENTE'
+            "
+            routerLink="/enderecos"
+            >Endereços</a
+          >
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link" routerLink="/cidades">Cidades</a>
+          <a
+            href="#"
+            class="nav-link"
+            routerLink="/cidades"
+            *ngIf="
+              usuarioLogado.perfil === 'ADMIN' ||
+              usuarioLogado.perfil === 'GERENTE'
+            "
+            >Cidades</a
+          >
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link" routerLink="/estados">Estados</a>
+          <a
+            href="#"
+            class="nav-link"
+            routerLink="/estados"
+            *ngIf="
+              usuarioLogado.perfil === 'ADMIN' ||
+              usuarioLogado.perfil === 'GERENTE'
+            "
+            >Estados</a
+          >
         </li>
         <li class="nav-item" ngbDropdown>
           <a
@@ -61,6 +100,16 @@
               >Estados</a
             >
           </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto" *ngIf="usuarioLogado">
+        <li class="nav-item">
+          <a href="#" (click)="logout()" class="nav-link">Logout</a>
+        </li>
+        <li class="nav-item">
+          <p class="navbar-text mb-0 text-white">
+            <i class="fa fa-user"></i>{{ usuarioLogado.nome }}
+          </p>
         </li>
       </ul>
     </div>

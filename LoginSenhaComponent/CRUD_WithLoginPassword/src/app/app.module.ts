@@ -12,9 +12,13 @@ import { SharedModule } from './shared/shared.module';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { AuthModule } from './auth/auth.module';
+import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [
+    AuthModule,
     SharedModule,
     PessoaModule,
     BrowserModule,
@@ -24,6 +28,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
     EstadoModule,
     NgbModule,
     NgSelectModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

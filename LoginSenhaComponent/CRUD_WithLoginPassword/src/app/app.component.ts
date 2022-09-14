@@ -1,22 +1,25 @@
 import { Component } from '@angular/core';
-import { Title } from '../app/title';
-import { Endereco } from './shared/models/endereco.model';
+import { Router } from '@angular/router';
+
+import { LoginService } from './auth/services/login.service';
+import { Usuario } from './shared';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  titles: Title[] = [
-    {
-      title: 'Cadastro de Pessoas',
-      router_link: '/pessoas',
-    },
-    {
-      title: 'Endereços',
-      router_link: '/enderecos',
-    },
-    { title: 'Cidades', router_link: '/cidades' },
-    { title: 'Estados', router_link: '/estados' },
-  ];
+  title = 'Cadastro de Pessoas';
+
+  constructor(private router: Router, private loginService: LoginService) {}
+
+  get usuarioLogado(): Usuario {
+    return this.loginService.usuarioLogado;
+  }
+
+  logout(): void {
+    this.loginService.logout();
+    this.router.navigate(['/login']);
+  }
 }
